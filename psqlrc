@@ -1,0 +1,4 @@
+\pset pager
+\set PROMPT1 '%[%033[1;36m%]%/%[%033[0m%]%R%#%x '
+\set COMP_KEYWORD_CASE upper
+\timing
