@@ -17,7 +17,21 @@ export PATH
 
 
 ### stuf in /etc/profile
-
+#export YELLOW=`echo -e '\033[0;33m'`
+#export LIGHT_CYAN=`echo -e '\033[1;36m'`
+#export NOCOLOR=`echo -e '\033[0m'`
+#export LIGHT_GRAY=$(echo -e '\033[0;37m')
+#export DARK_GRAY=$(echo -e '\033[1;37m')
+#
+#export LESS="-iMSx4 -FXR"
+#
+#PAGER="sed \"s/\([[:space:]]\+[0-9.\-]\+\)$/${LIGHT_CYAN}\1$NOCOLOR/;" 
+#PAGER+="s/\([[:space:]]\+[0-9.\-]\+[[:space:]]\)/${LIGHT_CYAN}\1$NOCOLOR/g;" 
+#PAGER+="s/|/$YELLOW|$NOCOLOR/g;s/^\([-+]\+\)/$YELLOW\1$NOCOLOR/\" 2>/dev/null  | less"
+#export PAGER
+#
+#
+#
 ## Git branch in prompt.
 #
 #parse_git_branch() {
