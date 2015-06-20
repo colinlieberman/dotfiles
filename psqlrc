@@ -1,6 +1,6 @@
 \pset pager always
 \x auto
-\pset columns 120
+\pset columns 180
 \set PROMPT1 '%[%033[1;36m%]%/%[%033[0m%]%R%#%x '
 \set COMP_KEYWORD_CASE upper
 \timing

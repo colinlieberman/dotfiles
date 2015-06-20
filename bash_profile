@@ -17,6 +17,7 @@ export PATH
 
 
 ### stuf in /etc/profile
+#http://merlinmoncure.blogspot.ca/2012/09/psql-now-with-splash-of-color.html
 #export YELLOW=`echo -e '\033[0;33m'`
 #export LIGHT_CYAN=`echo -e '\033[1;36m'`
 #export NOCOLOR=`echo -e '\033[0m'`
