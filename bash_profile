@@ -1,4 +1,10 @@
 alias ll="ls -lh"
+
+alias gcc=ccache
+alias g++=ccache
+alias cc=ccache
+alias c++=ccache
+
 export POSTGRES="/Library/PostgreSQL/9.4"
 export PGDATA="$POSTGRES/data"
 export JAVA_HOME=$(/usr/libexec/java_home)
@@ -22,13 +28,17 @@ export PATH
 #export LIGHT_CYAN=`echo -e '\033[1;36m'`
 #export NOCOLOR=`echo -e '\033[0m'`
 #export LIGHT_GRAY=$(echo -e '\033[0;37m')
+#export LIGHT_PURPLE=$(echo -e '\033[1;35m')
+#export LIGHT_BLUE=$(echo -e '\033[1;34m')
+#export LIGHT_GREEN=$(echo -e '\033[1;32m')
 #export DARK_GRAY=$(echo -e '\033[1;37m')
 #
 #export LESS="-iMSx4 -FXR"
 #
-#PAGER="sed \"s/\([[:space:]]\+[0-9.\-]\+\)$/${LIGHT_CYAN}\1$NOCOLOR/;" 
-#PAGER+="s/\([[:space:]]\+[0-9.\-]\+[[:space:]]\)/${LIGHT_CYAN}\1$NOCOLOR/g;" 
-#PAGER+="s/|/$YELLOW|$NOCOLOR/g;s/^\([-+]\+\)/$YELLOW\1$NOCOLOR/\" 2>/dev/null  | less"
+#PAGER="sed \"s/\(\([[:space:]]\+[0-9.\:\-]\+\)\+\)$/${LIGHT_CYAN}\1$NOCOLOR/;" 
+#PAGER+="1s/\(.*\)/${LIGHT_GREEN}\1${NOCOLOR}/g;"
+#PAGER+="s/\([[:space:]]\+[0-9.\-\:]\+[[:space:]]\)/${LIGHT_CYAN}\1$NOCOLOR/g;" 
+#PAGER+="2,\\\$s/|/$YELLOW|$NOCOLOR/g;2,\\\$s/^\([-+]\+\)/$YELLOW\1$NOCOLOR/\" 2>/dev/null  | less"
 #export PAGER
 #
 #

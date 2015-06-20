@@ -19,6 +19,9 @@ set showmatch
 set laststatus=2
 set visualbell
 set expandtab
+"tabs for postgres and Makefiles
+autocmd BufRead,BufNewFile *itpgh/*,*postgresql/* set noexpandtab
+autocmd BufRead,BufNewFile *Makefile* set noexpandtab
 set formatoptions+=r
 set wrapmargin=0
 set matchpairs+=<:>
