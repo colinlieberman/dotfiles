@@ -151,7 +151,7 @@ export PATH
 #PAGER+="s/\(^\||\)\( *\)\([0-9.\-]\+\)\(\( *\)|\|\\\$\)/\1\2${NUMERIC}\3${NORMAL}\4/g;"
 #
 ## bools
-#PAGER+="s/\(^\| \)\( *\)\([t\|f]\)\(\( *\)|\|\\\$\)/\1\2${BOOL}\3${NORMAL}\4/g;"
+#PAGER+="s/\(^\| \)\( *\)\([tf]\)\(\( *\)|\|\\\$\)/\1\2${BOOL}\3${NORMAL}\4/g;"
 #
 ## column separators (and the occaisional unfortunate pipe in text)
 ## doing this last so pipes are intact for use in numeric fields,
