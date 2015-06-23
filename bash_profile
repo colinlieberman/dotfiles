@@ -147,7 +147,10 @@ export PATH
 ## fields have tricky detection for
 ## surrounding pips or lind ends
 #
-## numeric fields
+## numeric fields; this has a bug where sequential numeric fields
+## are only alternately colored. This is because we match the 
+## separators on both sides of the field; this bug is preferable
+## to matching numerics at the start of text fields
 #PAGER+="s/\(^\||\)\( *\)\([0-9.\-]\+\)\(\( *\)|\|\\\$\)/\1\2${NUMERIC}\3${NORMAL}\4/g;"
 #
 ## bools
