@@ -9,7 +9,7 @@ export POSTGRES="/Library/PostgreSQL/9.4"
 export PGDATA="$POSTGRES/data"
 export JAVA_HOME=$(/usr/libexec/java_home)
 export LIQUIBASE_HOME="/Applications/liquibase"
-export PATH="${PATH}:~/bin:${POSTGRES}/bin:${LIQUIBASE_HOME}"
+export PATH="${PATH}:~/bin:${POSTGRES}/bin:${LIQUIBASE_HOME}:/opt/apache-maven-3.3.3/bin"
 export PYTHONPATH="/Library/Python/2.7/site-packages"
 export PGPASSWORD="postgres"
 test -f ~/.git-completion.bash && . $_
@@ -226,7 +226,7 @@ export PATH
 #}
 #
 #function get_name() {
-#    echo "$USER@$(hostname)"
+#    echo "$USER@$(hostname | cut -d. -f1)"
 #    # or
 #    # echo "$USER@local"
 #}
