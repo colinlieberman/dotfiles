@@ -1,7 +1,7 @@
 syntax on
 
 "capslock: https://github.com/tpope/vim-capslock
-source ~/.vim/vim-capslock/plugin/capslock.vim
+"source ~/.vim/vim-capslock/plugin/capslock.vim
 
 colorscheme koehler
 "set textwidth=78
@@ -22,12 +22,14 @@ set expandtab
 "tabs for postgres and Makefiles
 autocmd BufRead,BufNewFile *itpgh/*,*postgresql/* set noexpandtab
 autocmd BufRead,BufNewFile *Makefile* set noexpandtab
-set formatoptions+=r
+set formatoptions+=rc
 set wrapmargin=0
 set matchpairs+=<:>
 set ruler
 set hlsearch
 set pastetoggle=<F2>
+
+filetype plugin on
 
 map <F5> :nohlsearch<CR>
 
@@ -39,13 +41,20 @@ au! Syntax godoc source /usr/local/go/misc/vim/syntax/godoc.vim
 au! Syntax pgsql source ~/pgsql.vim
 
 " use html formatting for template toolkit and handlebars
+au BufNewFile,BufRead *.tt set filetype=html
+
+au BufNewFile,BufRead *.php set filetype=php
+au FileType php setlocal comments=s1:/*,mb:*,ex:*/,://,:#
+
 au BufNewFile,BufRead *.go set filetype=go
 au BufNewFile,BufRead *.godoc set filetype=godoc
 au BufNewFile,BufRead *.sql set filetype=pgsql
-au BufNewFile,BufRead *.tt set filetype=html
 au BufNewFile,BufRead *.handlebars set filetype=html " tw=0
 au BufNewFile,BufRead *.asp set filetype=perl
 au BufNewFile,BufRead *.t set filetype=sh
+au BufNewFile,BufRead *.py set filetype=python
+
+"autocmd FileType c,java,php inoreabbrev <buffer> /** /**/OA
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
