@@ -4,4 +4,4 @@ termcapinfo xterm* ti@:te@
 terminfo rxvt-unicode ti@:te@:
 term screen-256color
 shell -$SHELL
-
+defscrollback 30000
