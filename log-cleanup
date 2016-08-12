@@ -11,7 +11,7 @@ function yes_no {
 }
 
 function list_logs {
-  find . -name '*.log' -or -name '*_log' -or  -regex '.*\.log\.[0-9]*';
+  find ~/dev -name '*.log' -or -name '*_log' -or  -regex '.*\.log\.[0-9]*';
 }
 
 function logs_size {
