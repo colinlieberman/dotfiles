@@ -1,0 +1,43 @@
+#!/bin/bash
+
+function yes_no {
+  string="$1"
+  first_letter="${string:0:1}"
+  if [[ "$first_letter" != "y" && "$first_letter" != "Y" ]]; then
+    # default no nothing
+    return 1
+  fi
+  return 0
+}
+
+function list_logs {
+  find . -name '*.log' -or -name '*_log' -or  -regex '.*\.log\.[0-9]*';
+}
+
+function logs_size {
+  size="$(while read file; do du -chs $file; done < <(list_logs) | tail -1 | awk '{print $1}')";
+  if [[ -z "$size" ]]; then
+    echo "0b"
+  else
+    echo "$size"
+  fi
+}
+
+echo -n "logs size $(logs_size). Clean this up? [y/N] ";
+read will_cleanup;
+
+if ! $(yes_no $will_cleanup); then
+  exit
+fi
+
+list_logs
+
+echo -n "delete all these? [y/N] "
+read "delete_all"
+
+if ! $(yes_no $delete_all); then
+  exit
+fi
+
+while read file; do rm $file; done < <(list_logs)
+logs_size
