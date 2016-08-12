@@ -15,7 +15,7 @@ function list_logs {
 }
 
 function logs_size {
-  size="$(while read file; do du -chs $file; done < <(list_logs) | tail -1 | awk '{print $1}')";
+  size="$(while read -r file; do du -chs "$file"; done < <(list_logs) | tail -1 | awk '{print $1}')";
   if [[ -z "$size" ]]; then
     echo "0b"
   else
@@ -24,20 +24,20 @@ function logs_size {
 }
 
 echo -n "logs size $(logs_size). Clean this up? [y/N] ";
-read will_cleanup;
+read -r will_cleanup;
 
-if ! $(yes_no $will_cleanup); then
+if ! yes_no "$will_cleanup"; then
   exit
 fi
 
 list_logs
 
 echo -n "delete all these? [y/N] "
-read "delete_all"
+read -r "delete_all"
 
-if ! $(yes_no $delete_all); then
+if ! yes_no "$delete_all"; then
   exit
 fi
 
-while read file; do rm $file; done < <(list_logs)
+while read -r file; do rm "$file"; done < <(list_logs)
 logs_size
